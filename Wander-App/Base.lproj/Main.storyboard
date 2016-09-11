@@ -33,7 +33,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QsK-t1-D6o">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="21"/>
                                     <color key="textColor" red="0.94509803921568625" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
