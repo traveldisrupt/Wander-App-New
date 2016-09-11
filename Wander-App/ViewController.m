@@ -81,6 +81,11 @@
   self.acceptCallView.layer.borderWidth = .50;
   self.acceptCallView.layer.borderColor = [[UIColor blackColor] CGColor];
   self.acceptCallView.hidden = false;
+  
+  UIImageView *dot =[[UIImageView alloc] initWithFrame:CGRectMake(50,90,200,150)];
+  dot.image=[UIImage imageNamed:@"wander-logo.png"];
+  [self.acceptCallView addSubview:dot];
+  
   self.hangupButton.hidden = true;
   self.faceImage.hidden = true;
   self.youInCallLabel.hidden = true;
