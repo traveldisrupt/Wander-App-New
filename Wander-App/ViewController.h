@@ -12,5 +12,7 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
+@property (retain, nonatomic) NSURLConnection *connection;
+@property (retain, nonatomic) NSMutableData *receivedData;
 
 @end
