@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *youInCallLabel;
 @property (weak, nonatomic) IBOutlet UILabel *profileLabel;
 @property (weak, nonatomic) IBOutlet UILabel *profileDescriptionLabel;
+@property (nonatomic, strong) UIImageView *dot;
 
 @end
 
@@ -78,13 +79,13 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.acceptCallView.layer.borderWidth = .50;
-  self.acceptCallView.layer.borderColor = [[UIColor blackColor] CGColor];
+//  self.acceptCallView.layer.borderWidth = .50;
+//  self.acceptCallView.layer.borderColor = [[UIColor blackColor] CGColor];
   self.acceptCallView.hidden = false;
   
-  UIImageView *dot =[[UIImageView alloc] initWithFrame:CGRectMake(50,90,200,150)];
-  dot.image=[UIImage imageNamed:@"wander-logo.png"];
-  [self.acceptCallView addSubview:dot];
+  _dot =[[UIImageView alloc] initWithFrame:CGRectMake(50,90,200,150)];
+  _dot.image=[UIImage imageNamed:@"wander-logo.png"];
+  [self.acceptCallView addSubview:_dot];
   
   self.hangupButton.hidden = true;
   self.faceImage.hidden = true;
@@ -178,6 +179,7 @@
       self.acceptCallView.layer.cornerRadius = 2;
       self.acceptCallView.layer.masksToBounds = false;
       self.callButton.hidden = true;
+      self.dot.hidden = true;
       
       self.connection = connection;
     }];
