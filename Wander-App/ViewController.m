@@ -43,6 +43,7 @@
   self.profileDescriptionLabel.hidden = true;
   self.acceptCallView.layer.cornerRadius = 2;
   self.acceptCallView.layer.masksToBounds = false;
+  self.callButton.hidden = false;
 }
 
 - (IBAction)callAction:(id)sender {
@@ -79,7 +80,7 @@
   
   self.acceptCallView.layer.borderWidth = .50;
   self.acceptCallView.layer.borderColor = [[UIColor blackColor] CGColor];
-  self.acceptCallView.hidden = true;
+  self.acceptCallView.hidden = false;
   self.hangupButton.hidden = true;
   self.faceImage.hidden = true;
   self.youInCallLabel.hidden = true;
