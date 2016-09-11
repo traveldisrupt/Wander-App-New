@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <TwilioClient/TwilioClient.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <TCDeviceDelegate,
+TCConnectionDelegate>
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property (retain, nonatomic) NSURLConnection *connection;

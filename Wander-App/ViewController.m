@@ -9,10 +9,13 @@
 #import "ViewController.h"
 #import "CreateWanderRequest.h"
 #import "ViewWanderRequest.h"
+#define TOKEN_URL @"https://api.wander.host/api/1/twilio/token/?user=arthur"
 
 @interface ViewController () <CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *callButton;
+@property (nonatomic, strong) TCDevice *device;
+
 
 @end
 
@@ -49,12 +52,86 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self retrieveToken];
+
   // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (void) retrieveToken {
+  // Create a GET request to the capability token endpoint
+  NSURLSession *session = [NSURLSession sharedSession];
+  
+  NSURL *url = [NSURL URLWithString:TOKEN_URL];
+  NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+  
+  NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable responseData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    if (responseData) {
+      NSError *error = nil;
+      NSDictionary *responseObject = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+      if (responseObject) {
+        if (responseObject[@"identity"]) {
+          dispatch_async(dispatch_get_main_queue(), ^{
+            self.navigationItem.title = responseObject[@"identity"];
+          });
+        }
+        if (responseObject[@"token"]) {
+          [self initializeTwilioDevice:responseObject[@"token"]];
+        }
+      } else {
+        [self displayError:[error localizedDescription]];
+      }
+    } else {
+      [self displayError:[error localizedDescription]];
+    }
+  }];
+  [task resume];
+}
+
+#pragma mark Initialization methods
+- (void) initializeTwilioDevice:(NSString*)token {
+  self.device = [[TCDevice alloc] initWithCapabilityToken:token delegate:self];
+}
+
+#pragma mark Utility Methods
+- (void) displayError:(NSString*)errorMessage {
+  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:errorMessage preferredStyle:UIAlertControllerStyleAlert];
+  UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+  [alertController addAction:okAction];
+  [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark TCDeviceDelegate
+
+- (void)device:(TCDevice *)device didStopListeningForIncomingConnections:(NSError *)error {
+  if (error) {
+    NSLog(@"%@",[error localizedDescription]);
+  }
+}
+
+- (void)device:(TCDevice *)device didReceiveIncomingConnection:(TCConnection *)connection {
+  if (connection.parameters) {
+    NSString *from = connection.parameters[@"From"];
+    NSString *message = [NSString stringWithFormat:@"Incoming call from %@",from];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Incoming Call" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *acceptAction = [UIAlertAction actionWithTitle:@"Accept" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+      connection.delegate = self;
+      [connection accept];
+      self.connection = connection;
+    }];
+    UIAlertAction *declineAction = [UIAlertAction actionWithTitle:@"Decline" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+      [connection reject];
+    }];
+    
+    [alertController addAction:acceptAction];
+    [alertController addAction:declineAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+  }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
