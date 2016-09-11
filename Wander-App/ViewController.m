@@ -9,17 +9,41 @@
 #import "ViewController.h"
 #import "CreateWanderRequest.h"
 #import "ViewWanderRequest.h"
+#import "CancelWanderRequest.h"
+
 #define TOKEN_URL @"https://api.wander.host/api/1/twilio/token/?user=arthur"
 
 @interface ViewController () <CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *callButton;
 @property (nonatomic, strong) TCDevice *device;
-
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIView *acceptCallView;
+@property (weak, nonatomic) IBOutlet UIButton *hangupButton;
+@property (weak, nonatomic) IBOutlet UIImageView *faceImage;
+@property (weak, nonatomic) IBOutlet UILabel *youInCallLabel;
+@property (weak, nonatomic) IBOutlet UILabel *profileLabel;
+@property (weak, nonatomic) IBOutlet UILabel *profileDescriptionLabel;
 
 @end
 
 @implementation ViewController
+- (IBAction)hangUpCallAction:(id)sender {
+  CancelWanderRequest *cancelRequest = [[CancelWanderRequest alloc] init];
+  cancelRequest.cancelRequestForFindingGuide;
+  
+  
+  self.acceptCallView.layer.borderWidth = .50;
+  self.acceptCallView.layer.borderColor = [[UIColor blackColor] CGColor];
+  self.acceptCallView.hidden = true;
+  self.hangupButton.hidden = true;
+  self.faceImage.hidden = true;
+  self.youInCallLabel.hidden = true;
+  self.profileLabel.hidden = true;
+  self.profileDescriptionLabel.hidden = true;
+  self.acceptCallView.layer.cornerRadius = 2;
+  self.acceptCallView.layer.masksToBounds = false;
+}
 
 - (IBAction)callAction:(id)sender {
   
@@ -39,11 +63,11 @@
   ViewWanderRequest *viewRequest = [[ViewWanderRequest alloc] init];
   
   if(isCreated) {
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.center = CGPointMake(200, 280);
-    spinner.tag = 24;
-    [self.view addSubview:spinner];
-    [spinner startAnimating];
+    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _spinner.center = CGPointMake(200, 280);
+    _spinner.tag = 24;
+    [self.view addSubview:_spinner];
+    [_spinner startAnimating];
     
     viewRequest.viewRequestForFindingGuide;
   }
@@ -52,7 +76,20 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  self.acceptCallView.layer.borderWidth = .50;
+  self.acceptCallView.layer.borderColor = [[UIColor blackColor] CGColor];
+  self.acceptCallView.hidden = true;
+  self.hangupButton.hidden = true;
+  self.faceImage.hidden = true;
+  self.youInCallLabel.hidden = true;
+  self.profileLabel.hidden = true;
+  self.profileDescriptionLabel.hidden = true;
+  self.acceptCallView.layer.cornerRadius = 2;
+  self.acceptCallView.layer.masksToBounds = false;
+  
   [self retrieveToken];
+
 
   // Do any additional setup after loading the view, typically from a nib.
 }
@@ -115,12 +152,27 @@
 
 - (void)device:(TCDevice *)device didReceiveIncomingConnection:(TCConnection *)connection {
   if (connection.parameters) {
-    NSString *from = connection.parameters[@"From"];
+    [_spinner stopAnimating];
+//    NSString *from = connection.parameters[@"From"];
+    NSString *from = @"Ford";
     NSString *message = [NSString stringWithFormat:@"Incoming call from %@",from];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Incoming Call" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *acceptAction = [UIAlertAction actionWithTitle:@"Accept" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
       connection.delegate = self;
       [connection accept];
+      
+      self.acceptCallView.layer.borderWidth = .50;
+      self.acceptCallView.layer.borderColor = [[UIColor blackColor] CGColor];
+      self.acceptCallView.hidden = false;
+      self.hangupButton.hidden = false;
+      self.faceImage.hidden = false;
+      self.youInCallLabel.hidden = false;
+      self.profileLabel.hidden = false;
+      self.profileDescriptionLabel.hidden = false;
+      self.acceptCallView.layer.cornerRadius = 2;
+      self.acceptCallView.layer.masksToBounds = false;
+      self.callButton.hidden = true;
+      
       self.connection = connection;
     }];
     UIAlertAction *declineAction = [UIAlertAction actionWithTitle:@"Decline" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

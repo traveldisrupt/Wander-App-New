@@ -19,12 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfr-cH-Xqz">
-                                <rect key="frame" x="263" y="265" width="74" height="70"/>
+                                <rect key="frame" x="0.0" y="554" width="600" height="46"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="1OE-wz-mZv"/>
+                                    <constraint firstAttribute="height" constant="46" id="1OE-wz-mZv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" image="call_button"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <state key="normal" title="Request a Guide"/>
                                 <connections>
                                     <action selector="callAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IbH-bv-Pke"/>
                                 </connections>
@@ -39,26 +40,117 @@
                                     <navigationItem title="Wander" id="iaQ-R1-TMG"/>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rv-fg-YcG">
+                                <rect key="frame" x="150" y="109" width="300" height="341"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ford's Profile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1D-J9-FaN">
+                                        <rect key="frame" x="38" y="132" width="224" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="NIh-ys-RdB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" red="0.94509803920000002" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFr-fQ-I9V">
+                                        <rect key="frame" x="38" y="164" width="224" height="129"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="129" id="5ey-2L-Deu"/>
+                                        </constraints>
+                                        <string key="text"> Age:25
+Gender: Male
+Occupation: Tour Guide
+Rating: 5</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" red="0.94509803920000002" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face_image" translatesAutoresizingMaskIntoConstraints="NO" id="xO1-nR-hGu">
+                                        <rect key="frame" x="117" y="18" width="67" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="1ax-AZ-5GG"/>
+                                            <constraint firstAttribute="width" constant="67" id="1zp-G3-oG1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're in a call with Ford, your travel guide" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FK-rw-y0w">
+                                        <rect key="frame" x="38" y="89" width="224" height="41"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" red="0.94509803920000002" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="i1D-J9-FaN" firstAttribute="top" secondItem="8FK-rw-y0w" secondAttribute="bottom" constant="2" id="11V-4h-RO2"/>
+                                    <constraint firstAttribute="width" constant="300" id="BFf-H0-GWj"/>
+                                    <constraint firstItem="xO1-nR-hGu" firstAttribute="centerX" secondItem="4Rv-fg-YcG" secondAttribute="centerX" id="CMb-ZA-JcW"/>
+                                    <constraint firstItem="8FK-rw-y0w" firstAttribute="top" secondItem="xO1-nR-hGu" secondAttribute="bottom" constant="8" id="GZV-90-QlS"/>
+                                    <constraint firstAttribute="trailing" secondItem="8FK-rw-y0w" secondAttribute="trailing" constant="38" id="INr-0v-1ca"/>
+                                    <constraint firstAttribute="height" constant="341" id="N3M-xL-EQQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="xO1-nR-hGu" secondAttribute="trailing" constant="116" id="VEm-C7-3JC"/>
+                                    <constraint firstItem="i1D-J9-FaN" firstAttribute="centerX" secondItem="4Rv-fg-YcG" secondAttribute="centerX" id="YNN-pB-4a3"/>
+                                    <constraint firstAttribute="trailing" secondItem="gFr-fQ-I9V" secondAttribute="trailing" constant="38" id="YRh-Ax-XQ9"/>
+                                    <constraint firstItem="xO1-nR-hGu" firstAttribute="top" secondItem="4Rv-fg-YcG" secondAttribute="top" constant="18" id="ZmW-7A-G7H"/>
+                                    <constraint firstItem="xO1-nR-hGu" firstAttribute="leading" secondItem="4Rv-fg-YcG" secondAttribute="leading" constant="117" id="fm4-G9-Ep8"/>
+                                    <constraint firstItem="gFr-fQ-I9V" firstAttribute="leading" secondItem="4Rv-fg-YcG" secondAttribute="leading" constant="38" id="pQX-Vk-WCq"/>
+                                    <constraint firstItem="gFr-fQ-I9V" firstAttribute="top" secondItem="i1D-J9-FaN" secondAttribute="bottom" constant="1" id="ptE-kR-gVC"/>
+                                    <constraint firstItem="8FK-rw-y0w" firstAttribute="leading" secondItem="4Rv-fg-YcG" secondAttribute="leading" constant="38" id="r7c-fm-QcP"/>
+                                    <constraint firstItem="gFr-fQ-I9V" firstAttribute="centerX" secondItem="4Rv-fg-YcG" secondAttribute="centerX" id="znh-tK-L7o"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CMb-ZA-JcW"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ib-u3-88m">
+                                <rect key="frame" x="150" y="410" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zSy-90-zDs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <state key="normal" title="Hang Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hangUpCallAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kff-4N-VYr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QsK-t1-D6o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1e1-WO-xD5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QsK-t1-D6o" secondAttribute="trailing" constant="-20" id="2gc-qd-gvc"/>
-                            <constraint firstItem="Hfr-cH-Xqz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Ti-4y-isB"/>
+                            <constraint firstItem="4Rv-fg-YcG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Ds-A3-cfg"/>
+                            <constraint firstItem="4Rv-fg-YcG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20.5" id="7RX-rZ-QsP"/>
+                            <constraint firstItem="1Ib-u3-88m" firstAttribute="trailing" secondItem="4Rv-fg-YcG" secondAttribute="trailing" id="DyK-cJ-lcU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hfr-cH-Xqz" secondAttribute="bottom" id="Eb5-ne-FA8"/>
+                            <constraint firstItem="1Ib-u3-88m" firstAttribute="leading" secondItem="4Rv-fg-YcG" secondAttribute="leading" id="Ez3-QQ-9np"/>
+                            <constraint firstItem="Hfr-cH-Xqz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LXh-yc-C9M"/>
                             <constraint firstItem="QsK-t1-D6o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ljv-3u-6M7"/>
+                            <constraint firstItem="1Ib-u3-88m" firstAttribute="bottom" secondItem="4Rv-fg-YcG" secondAttribute="bottom" id="MHW-8i-WN5"/>
+                            <constraint firstItem="1Ib-u3-88m" firstAttribute="top" secondItem="gFr-fQ-I9V" secondAttribute="bottom" constant="8" id="NAi-Ww-YgD"/>
                             <constraint firstItem="Hfr-cH-Xqz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bK5-ID-oBs"/>
+                            <constraint firstAttribute="trailing" secondItem="Hfr-cH-Xqz" secondAttribute="trailing" id="var-gs-Zk1"/>
                             <constraint firstItem="QsK-t1-D6o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="zk7-MA-3Te"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="acceptCallView" destination="4Rv-fg-YcG" id="qBY-ag-7YA"/>
                         <outlet property="callButton" destination="Hfr-cH-Xqz" id="35e-40-yuy"/>
+                        <outlet property="faceImage" destination="xO1-nR-hGu" id="5EF-2v-tEi"/>
+                        <outlet property="hangupButton" destination="1Ib-u3-88m" id="wUh-LP-tW0"/>
+                        <outlet property="profileDescriptionLabel" destination="gFr-fQ-I9V" id="qHV-cR-FAP"/>
+                        <outlet property="profileLabel" destination="i1D-J9-FaN" id="GFw-gz-DBg"/>
+                        <outlet property="youInCallLabel" destination="8FK-rw-y0w" id="Ppu-oe-enm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="333" y="377"/>
         </scene>
     </scenes>
     <resources>
-        <image name="call_button" width="74" height="74"/>
+        <image name="face_image" width="99" height="132"/>
     </resources>
 </document>

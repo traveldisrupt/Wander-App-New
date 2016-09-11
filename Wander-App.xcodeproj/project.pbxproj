@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DBF7CF2201627512FFAFE3A /* libPods-Wander-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E83831C955F902974CC089 /* libPods-Wander-App.a */; };
 		E80B164D1D854550005158E9 /* CreateWanderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E80B164C1D854550005158E9 /* CreateWanderRequest.m */; };
 		E80B16501D855102005158E9 /* ViewWanderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E80B164F1D855102005158E9 /* ViewWanderRequest.m */; };
 		E838286E1D84F17F001878A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E838286D1D84F17F001878A4 /* main.m */; };
@@ -17,6 +18,8 @@
 		E838287C1D84F17F001878A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E838287A1D84F17F001878A4 /* LaunchScreen.storyboard */; };
 		E83828871D84F17F001878A4 /* Wander_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E83828861D84F17F001878A4 /* Wander_AppTests.m */; };
 		E83828921D84F17F001878A4 /* Wander_AppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E83828911D84F17F001878A4 /* Wander_AppUITests.m */; };
+		E8744DE31D85A42E00311FC0 /* GuideObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E8744DE21D85A42E00311FC0 /* GuideObject.m */; };
+		E8744DE61D85A5DE00311FC0 /* CancelWanderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8744DE51D85A5DE00311FC0 /* CancelWanderRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		058EC9EA813485FB400552AD /* Pods-Wander-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wander-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wander-App/Pods-Wander-App.debug.xcconfig"; sourceTree = "<group>"; };
+		56E83831C955F902974CC089 /* libPods-Wander-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wander-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F31D6161BBF9C6A93099010 /* Pods-Wander-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wander-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wander-App/Pods-Wander-App.release.xcconfig"; sourceTree = "<group>"; };
 		E80B164B1D854550005158E9 /* CreateWanderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWanderRequest.h; sourceTree = "<group>"; };
 		E80B164C1D854550005158E9 /* CreateWanderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWanderRequest.m; sourceTree = "<group>"; };
 		E80B164E1D855102005158E9 /* ViewWanderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewWanderRequest.h; sourceTree = "<group>"; };
@@ -57,6 +63,10 @@
 		E838288D1D84F17F001878A4 /* Wander-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wander-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83828911D84F17F001878A4 /* Wander_AppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wander_AppUITests.m; sourceTree = "<group>"; };
 		E83828931D84F17F001878A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8744DE11D85A42E00311FC0 /* GuideObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideObject.h; sourceTree = "<group>"; };
+		E8744DE21D85A42E00311FC0 /* GuideObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideObject.m; sourceTree = "<group>"; };
+		E8744DE41D85A5DE00311FC0 /* CancelWanderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancelWanderRequest.h; sourceTree = "<group>"; };
+		E8744DE51D85A5DE00311FC0 /* CancelWanderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancelWanderRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DBF7CF2201627512FFAFE3A /* libPods-Wander-App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A9F8C20998C8433690429DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				058EC9EA813485FB400552AD /* Pods-Wander-App.debug.xcconfig */,
+				9F31D6161BBF9C6A93099010 /* Pods-Wander-App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		57231C3309B39E3A0340BFE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56E83831C955F902974CC089 /* libPods-Wander-App.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E83828601D84F17F001878A4 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +119,8 @@
 				E83828851D84F17F001878A4 /* Wander-AppTests */,
 				E83828901D84F17F001878A4 /* Wander-AppUITests */,
 				E838286A1D84F17F001878A4 /* Products */,
+				1A9F8C20998C8433690429DA /* Pods */,
+				57231C3309B39E3A0340BFE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +150,10 @@
 				E80B164C1D854550005158E9 /* CreateWanderRequest.m */,
 				E80B164E1D855102005158E9 /* ViewWanderRequest.h */,
 				E80B164F1D855102005158E9 /* ViewWanderRequest.m */,
+				E8744DE11D85A42E00311FC0 /* GuideObject.h */,
+				E8744DE21D85A42E00311FC0 /* GuideObject.m */,
+				E8744DE41D85A5DE00311FC0 /* CancelWanderRequest.h */,
+				E8744DE51D85A5DE00311FC0 /* CancelWanderRequest.m */,
 			);
 			path = "Wander-App";
 			sourceTree = "<group>";
@@ -157,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E83828961D84F17F001878A4 /* Build configuration list for PBXNativeTarget "Wander-App" */;
 			buildPhases = (
+				48655F0FA32CD155418A7779 /* Check Pods Manifest.lock */,
 				E83828651D84F17F001878A4 /* Sources */,
 				E83828661D84F17F001878A4 /* Frameworks */,
 				E83828671D84F17F001878A4 /* Resources */,
+				EE82FBAE00CA9DAE166FDF70 /* Embed Pods Frameworks */,
+				601B0BA86CA54DF830A12B2C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,14 +313,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48655F0FA32CD155418A7779 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		601B0BA86CA54DF830A12B2C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wander-App/Pods-Wander-App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE82FBAE00CA9DAE166FDF70 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wander-App/Pods-Wander-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E83828651D84F17F001878A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E83828741D84F17F001878A4 /* ViewController.m in Sources */,
+				E8744DE31D85A42E00311FC0 /* GuideObject.m in Sources */,
 				E80B16501D855102005158E9 /* ViewWanderRequest.m in Sources */,
 				E83828711D84F17F001878A4 /* AppDelegate.m in Sources */,
+				E8744DE61D85A5DE00311FC0 /* CancelWanderRequest.m in Sources */,
 				E80B164D1D854550005158E9 /* CreateWanderRequest.m in Sources */,
 				E838286E1D84F17F001878A4 /* main.m in Sources */,
 			);
@@ -426,6 +513,7 @@
 		};
 		E83828971D84F17F001878A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 058EC9EA813485FB400552AD /* Pods-Wander-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -438,6 +526,7 @@
 		};
 		E83828981D84F17F001878A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F31D6161BBF9C6A93099010 /* Pods-Wander-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
