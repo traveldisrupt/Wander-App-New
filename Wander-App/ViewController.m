@@ -7,15 +7,19 @@
 //
 
 #import "ViewController.h"
+#import "CreateWanderRequest.h"
+#import "ViewWanderRequest.h"
 
 @interface ViewController () <CLLocationManagerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *callButton;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
+- (IBAction)callAction:(id)sender {
+  
   self.locationManager = [[CLLocationManager alloc] init];
   self.locationManager.delegate = self;
   self.locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -24,9 +28,27 @@
   if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
     [self.locationManager requestWhenInUseAuthorization];
   }
-  [self.locationManager startUpdatingLocation];
+//  [self.locationManager startUpdatingLocation];
   
+  CreateWanderRequest *createRequest = [[CreateWanderRequest alloc] init];
+  bool isCreated = createRequest.createRequestForFindingGuide;
   
+  ViewWanderRequest *viewRequest = [[ViewWanderRequest alloc] init];
+  
+  if(isCreated) {
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(200, 280);
+    spinner.tag = 24;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+    
+    viewRequest.viewRequestForFindingGuide;
+  }
+  
+}
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -39,7 +61,7 @@
 {
   CLLocation * lastLocation = (CLLocation *)[locations lastObject];
 
-  NSLog(@"these are the locations %f and %f", lastLocation.coordinate.latitude, lastLocation.coordinate.longitude);
+//  NSLog(@"these are the locations %f and %f", lastLocation.coordinate.latitude, lastLocation.coordinate.longitude);
   
 //  NSString *url = @"https://thingspace.io/dweet/for/padmaja-device";
   
@@ -51,7 +73,7 @@
   self.receivedData = data;
   
   //initialize url that is going to be fetched.
-  NSURL *url = [NSURL URLWithString:@"https://thingspace.io/dweet/for/padmaja-device"];
+  NSURL *url = [NSURL URLWithString:@"https://thingspace.io/dweet/for/arthur1million"];
   
   //initialize a request from url
   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[url standardizedURL]];

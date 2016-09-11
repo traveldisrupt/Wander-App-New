@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80B164D1D854550005158E9 /* CreateWanderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E80B164C1D854550005158E9 /* CreateWanderRequest.m */; };
+		E80B16501D855102005158E9 /* ViewWanderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E80B164F1D855102005158E9 /* ViewWanderRequest.m */; };
 		E838286E1D84F17F001878A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E838286D1D84F17F001878A4 /* main.m */; };
 		E83828711D84F17F001878A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E83828701D84F17F001878A4 /* AppDelegate.m */; };
 		E83828741D84F17F001878A4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E83828731D84F17F001878A4 /* ViewController.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E80B164B1D854550005158E9 /* CreateWanderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWanderRequest.h; sourceTree = "<group>"; };
+		E80B164C1D854550005158E9 /* CreateWanderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWanderRequest.m; sourceTree = "<group>"; };
+		E80B164E1D855102005158E9 /* ViewWanderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewWanderRequest.h; sourceTree = "<group>"; };
+		E80B164F1D855102005158E9 /* ViewWanderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewWanderRequest.m; sourceTree = "<group>"; };
 		E83828691D84F17F001878A4 /* Wander-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wander-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E838286D1D84F17F001878A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E838286F1D84F17F001878A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 				E838287A1D84F17F001878A4 /* LaunchScreen.storyboard */,
 				E838287D1D84F17F001878A4 /* Info.plist */,
 				E838286C1D84F17F001878A4 /* Supporting Files */,
+				E80B164B1D854550005158E9 /* CreateWanderRequest.h */,
+				E80B164C1D854550005158E9 /* CreateWanderRequest.m */,
+				E80B164E1D855102005158E9 /* ViewWanderRequest.h */,
+				E80B164F1D855102005158E9 /* ViewWanderRequest.m */,
 			);
 			path = "Wander-App";
 			sourceTree = "<group>";
@@ -272,7 +282,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E83828741D84F17F001878A4 /* ViewController.m in Sources */,
+				E80B16501D855102005158E9 /* ViewWanderRequest.m in Sources */,
 				E83828711D84F17F001878A4 /* AppDelegate.m in Sources */,
+				E80B164D1D854550005158E9 /* CreateWanderRequest.m in Sources */,
 				E838286E1D84F17F001878A4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +513,7 @@
 				E83828981D84F17F001878A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E83828991D84F17F001878A4 /* Build configuration list for PBXNativeTarget "Wander-AppTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +522,7 @@
 				E838289B1D84F17F001878A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E838289C1D84F17F001878A4 /* Build configuration list for PBXNativeTarget "Wander-AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +531,7 @@
 				E838289E1D84F17F001878A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
